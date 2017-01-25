@@ -1,7 +1,13 @@
 var sketchProc=function(processingInstance){ with (processingInstance){
 
 setup = function() {
-	size(1000,800);
+	var w = window.innerWidth ||
+                document.documentElement.clientWidth ||
+                document.body.clientWidth;
+    	var h = window.innerHeight ||
+                 document.documentElement.clientHeight ||
+                 document.body.clientHeight;
+	size(w,h);
 	frameRate(60);
 };
 
