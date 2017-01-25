@@ -7,7 +7,7 @@ setup = function() {
     	var h = window.innerHeight ||
                  document.documentElement.clientHeight ||
                  document.body.clientHeight;
-	size(w,h);
+	size(w*0.9,h*0.9);
 	frameRate(60);
 };
 
