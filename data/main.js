@@ -16,7 +16,7 @@ setup = function() {
 };
 
 draw = function() {
-	test = loadImage("data/images/Bootleg2.png");
+	test = loadImage("images/Bootleg2.png");
 	
 	image(test,0,0);
 	
