@@ -11,11 +11,13 @@ setup = function() {
 	size(w*0.9,h*0.9);
 	frameRate(60);
 	
+	test;
 	
-	test = loadImage("data/images/Bootleg2.png");
 };
 
 draw = function() {
+	test = loadImage("data/images/Bootleg2.png");
+	
 	image(test,0,0);
 	
 	
