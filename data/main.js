@@ -1,6 +1,7 @@
 var sketchProc=function(processingInstance){ with (processingInstance){
 
 setup = function() {
+	//Setup
 	var w = window.innerWidth ||
                 document.documentElement.clientWidth ||
                 document.body.clientWidth;
@@ -13,6 +14,7 @@ setup = function() {
 
 draw = function() {
 	background(255,255,255);
+	image(loadImage("data/images/Bootleg2.png"),width/2,height/2);
 };
 
 }};
