@@ -1,1 +1,27 @@
+<html>
+	<head>	
+		<title>Hellmen</title>
+		<style>
+		body {
+		    background-color: rgb(55,55,55);
+		}
+		</style>
+	</head>
 
+	<body>
+
+		<p align="center"> 
+			<canvas id="thecanvas"></canvas> 
+		</p>
+
+		<script src="data/processing.js"></script>
+		<script src="data/main.js"></script>
+	</body>
+
+	<script type="application/javascript">
+	  var canvas = document.getElementById("thecanvas");
+	  //pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+	  var processingInstance = new Processing(canvas, sketchProc); 
+	</script>
+
+</html>
