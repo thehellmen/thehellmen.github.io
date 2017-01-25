@@ -14,7 +14,7 @@ setup = function() {
 
 draw = function() {
 	background(255,255,255);
-	image(loadImage("data/images/Bootleg2.png"),width/2,height/2);
+	image(loadImage("images/Bootleg2.png"),width/2,height/2);
 };
 
 }};
