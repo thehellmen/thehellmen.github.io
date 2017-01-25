@@ -1,5 +1,7 @@
 var sketchProc=function(processingInstance){ with (processingInstance){
 
+
+
 setup = function() {
 	//Setup
 	var w = window.innerWidth ||
@@ -11,18 +13,27 @@ setup = function() {
 	size(w*0.9,h*0.9);
 	frameRate(60);
 	
-	test;
-	test = loadImage("/data/images/Bootleg2.png");
+	
+	test = loadImage("data/images/Bootleg2.png");
+	
+	displaypanel = function(img,x,y) {
+		imageMode(CENTER);
+		pushMatrix();
+	
+			translate(x,y);
+			scale(0.001*height);
+			image(img,0,0);
+	
+		popMatrix();
+	};
+	
 };
 
+setup();
+
 draw = function() {
-	background(0,250,250);
-	
-	image(test,50,50);
-	
-	
-	
-		
+	background(55,55,55);	
+	displaypanel(test,width/2,height/2);		
 };
 
 }};
