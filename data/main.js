@@ -10,11 +10,14 @@ setup = function() {
                  document.body.clientHeight;
 	size(w*0.9,h*0.9);
 	frameRate(60);
+	
+	
+	test = loadImage("images/Bootleg2.png");
 };
 
 draw = function() {
 	background(255,255,255);
-	image(loadImage("images/Bootleg2.png"),width/2,height/2);
+	image(test,width/2,height/2);
 };
 
 }};
