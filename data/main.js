@@ -31,6 +31,7 @@ setup = function() {
 	tert = color(150,150,150);
 	backg = color(55,55,55);
 	
+	// Standard fade in.
 	fade = function() {
 		flevel -= 10;
 		fill(55,55,55,flevel);
@@ -39,6 +40,7 @@ setup = function() {
 		rect(-1,-1,width+1,height+1);
 	};
 	
+	// Loads all panels in the named folder into the target array.
 	loadpanels = function(name,number,target) {
 		for (i = 0; i < number;) {
 			target[i] = loadImage("data/images/panels/"+name+i+".png");
@@ -46,12 +48,14 @@ setup = function() {
 		}
 	};
 	
+	// The array of data for buttons used.
 	buttons = {
 		start:{x:width*(3/4),y:height/2,w:bw,h:bh,text:"Enter"},
 		next:{x:width*(8/9),y:height*(1/2),w:bw,h:bh,text:"Next"},
 		prev:{x:width*(1/9),y:height*(1/2),w:bw,h:bh,text:"Previous"},
 	};
 	
+	// Displays an image properly.
 	displaypanel = function(img,x,y) {
 		imageMode(CENTER);
 		pushMatrix();
@@ -61,6 +65,7 @@ setup = function() {
 		popMatrix();
 	};
 	
+	// The hefty button function.  Works on all platforms tested.  Needs an exterior click call.
 	button = function(con) {
 		bux = con.x
 		buy = con.y
@@ -103,6 +108,8 @@ setup = function() {
 	};
 	
 	loadpanels("chap1/",1,chapter1);
+	
+	// Standard button layout
 	standardbuttons = function() {
 		button(buttons.next);
 		if (buttons.next.pressed) {
@@ -117,6 +124,23 @@ setup = function() {
 		};
 	};
 	
+	// Creates a full page
+	displaypage = function(chapter,number) {
+		background(backg)			
+		displaypanel(chapter[number],width/2,height/2);			
+		standardbuttons();			
+		fade();
+	};
+	
+	// Loads an array with full pages
+	loadpages = function(chapter,target,prevlength) {
+		for (i = page; i < chapter.length; i ++) {
+			target[i+prevlength]=displaypage(chapter,i);
+		};
+	};
+	
+	loadpages(chap1,pages,1);
+	
 	pages = [
 		function() {
 			background(backg)
@@ -128,18 +152,12 @@ setup = function() {
 				page += 1
 			}
 		},
-		function() {
-			background(backg)
-			
-			displaypanel(chapter1[0],width/2,height/2);
-			
-			standardbuttons();
-			
-			fade();
-		},
-		
 	];
 	
+};
+	
+draw = function() {
+	pages[page]();
 };
 
 keyPressed = function() {
@@ -154,11 +172,4 @@ mousePressed = function() {
 mouseReleased = function() {
 	m = false;
 };
-
-draw = function() {
-	pages[page]();
-	fill(0,0,0);
-	text(mouseX+", "+mouseY,width/2,height/2);
-};
-
 }};
