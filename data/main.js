@@ -108,6 +108,7 @@ setup = function() {
 
 draw = function() {
 	pages[page]();
+	println(m);
 };
 
 keyPressed = function() {
