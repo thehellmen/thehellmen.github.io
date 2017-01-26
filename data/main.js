@@ -137,6 +137,8 @@ setup = function() {
 
 draw = function() {
 	pages[page]();
+	fill(0,0,0);
+	text(m+" "+md+" "+buttons.start.pressed);
 };
 
 keyPressed = function() {
