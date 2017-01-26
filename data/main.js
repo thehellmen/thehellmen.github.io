@@ -74,7 +74,7 @@ setup = function() {
 		text(butext,bux+buw/2,buy+buh/2);
 		
 		
-		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && m || mouseClicked) {
+		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && m || mouseDragged) {
 			con.pressed = true;
 		}
 		return con.pressed;
@@ -109,7 +109,7 @@ setup = function() {
 draw = function() {
 	pages[page]();
 	fill(0,0,0);
-	text(m,width/2,height/3);
+	text(m+" "+mouseDragged,width/2,height/3);
 };
 
 keyPressed = function() {
