@@ -20,8 +20,11 @@ setup = function() {
 	keys = [];
 	pages = [];
 	page = 0;
+	
 	chapter1 = [];
 	chapter1pages = [];
+	chapter1length = 5;
+	
 	chapter2 = [];
 	chapter2pages = [];
 	
@@ -127,7 +130,7 @@ setup = function() {
 		return con.pressed;
 	};
 	
-	loadpanels("chap1/",4,chapter1);
+	loadpanels("chap1/",chapter1length,chapter1);
 	
 	// Standard button layout
 	standardbuttons = function() {
@@ -198,6 +201,9 @@ setup = function() {
 		},
 		function() {
 			displaypage(chapter1,3);
+		},
+		function() {
+			displaypage(chapter1,4);
 		},
 	];
 	
