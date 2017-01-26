@@ -110,10 +110,8 @@ setup = function() {
 		text(butext,bux,buy);
 		
 		if (ismobile && mouseover) {		  
-			if (con.pressed == false) {
-				con.pressed = true;
-				return con.pressed;
-			}
+			con.pressed = true;
+			return con.pressed;
 		}
 		
 		if (mouseover && m) {
