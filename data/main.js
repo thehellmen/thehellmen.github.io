@@ -29,8 +29,9 @@ setup = function() {
 	tert = color(150,150,150);
 	
 	loadpanels = function(name,number,target) {
-		for (i = 0; i < number; i ++) {
-			target[i] = loadImage("data/images/panels"+name+i+".png");
+		for (i = 0; i < number;) {
+			target[i] = loadImage("data/images/panels/"+name+i+".png");
+			i ++;
 		}
 	};
 	
@@ -81,7 +82,7 @@ setup = function() {
 		return con.pressed;
 	};
 	
-	loadpanels("/chap1/",1,chapter1);
+	loadpanels("chap1/",1,chapter1);
 	
 	pages = [
 		function() {
