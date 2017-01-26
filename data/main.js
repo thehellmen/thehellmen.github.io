@@ -117,7 +117,7 @@ setup = function() {
 	standardbuttons = function() {
 		button(buttons.next);
 		if (buttons.next.pressed) {
-			if (flevel < 100) {
+			if (flevel < 50) {
 				page += 1;
 				flevel = 255;
 			}
@@ -125,7 +125,7 @@ setup = function() {
 		
 		button(buttons.prev);
 		if (buttons.prev.pressed) {
-			if (flevel < 100) {
+			if (flevel < 50) {
 				page -= 1;
 				flevel = 255;
 			}
