@@ -33,6 +33,9 @@ setup = function() {
 	fade = function() {
 		flevel -= 10;
 		fill(55,55,55,flevel);
+		noStroke();
+		rectMode(CORNER);
+		rect(-1,-1,width+1,height+1);
 	};
 	
 	loadpanels = function(name,number,target) {
