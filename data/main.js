@@ -37,8 +37,8 @@ setup = function() {
 	
 	buttons = {
 		start:{x:width*(3/4),y:height/2,w:bw,h:bh,text:"Enter"},
-		next:{x:width*(4/5),y:height*(5/6),w:bw,h:bh,text:"Next"},
-		prev:{x:width*(1/5),y:height*(5/6),w:bw,h:bh,text:"Previous"},
+		next:{x:width*(5/7),y:height*(5/6),w:bw,h:bh,text:"Next"},
+		prev:{x:width*(1/7),y:height*(5/6),w:bw,h:bh,text:"Previous"},
 	};
 	
 	displaypanel = function(img,x,y) {
