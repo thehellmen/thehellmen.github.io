@@ -82,7 +82,15 @@ setup = function() {
 		rectMode(CENTER);
 		
 		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2) {
-			mouseover = true;
+			if (ismobile) {
+				if (mouseover = false) {
+					mouseover = true;
+				} else {
+					mouseover = false;
+				}
+			} else {
+				mouseover = true;
+			}
 		}
 		
 		if (mouseover) {
@@ -105,7 +113,6 @@ setup = function() {
 		}
 		textAlign(CENTER,CENTER);
 		text(butext,bux,buy);
-		
 		
 		if (ismobile && mouseover) {		  
 			if (con.pressed == false) {
