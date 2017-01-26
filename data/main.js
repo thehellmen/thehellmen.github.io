@@ -127,7 +127,7 @@ setup = function() {
 	
 	// Creates a full page
 	displaypage = function(chapter,number) {
-		background(backg)			
+		background(backg);		
 		displaypanel(chapter[number],width/2,height/2);			
 		standardbuttons();			
 		fade();
