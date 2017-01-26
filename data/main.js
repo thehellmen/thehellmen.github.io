@@ -105,6 +105,7 @@ setup = function() {
 		if (ismobile && (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2)) {		  
 			con.pressed = true;
 			return con.pressed;
+			con.pressed = false;
 		}
 		
 		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && m) {
