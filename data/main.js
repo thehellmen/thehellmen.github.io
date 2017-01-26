@@ -139,7 +139,7 @@ setup = function() {
 		};
 	};
 	
-	loadpages(chap1,pages,1);
+	loadpages(chapter1,pages,1);
 	
 	pages = [
 		function() {
