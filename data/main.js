@@ -85,8 +85,6 @@ setup = function() {
 			if (ismobile) {
 				if (mouseover = false) {
 					mouseover = true;
-				} else {
-					mouseover = false;
 				}
 			} else {
 				mouseover = true;
