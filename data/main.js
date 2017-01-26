@@ -75,7 +75,7 @@ setup = function() {
 		text(butext,bux+buw/2,buy+buh/2);
 		
 		
-		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && m || mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && mouseDragged)) {
+		if ((mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && m) || (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && mouseDragged)) {
 			con.pressed = true;
 		}
 		return con.pressed;
