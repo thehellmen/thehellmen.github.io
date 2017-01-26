@@ -15,6 +15,7 @@ frameRate(60);
 setup = function() {
 	mainfont = createFont("Times New Roman");
 	logo = loadImage("data/images/logo1.png");
+	isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 	
 	keys = [];
 	page = 0;
@@ -88,7 +89,7 @@ setup = function() {
 		textAlign(CENTER,CENTER);
 		text(butext,bux,buy);
 		
-		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		
 		if (isMobile && (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2)) {		  
 			con.pressed = true;
 			return con.pressed;
