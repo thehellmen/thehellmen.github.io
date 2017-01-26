@@ -66,7 +66,7 @@ setup = function() {
 		buw = con.w
 		buh = con.h
 		butext = con.text
-		//con.pressed = false;
+		con.pressed = false;
 		
 		rectMode(CENTER);
 		
@@ -91,6 +91,7 @@ setup = function() {
 		
 		if ((mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && m) || (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && md)) {
 			con.pressed = true;
+			return con.pressed;
 		}
 		return con.pressed;
 	};
