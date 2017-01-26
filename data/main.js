@@ -151,6 +151,7 @@ keyReleased = function() {
 };
 mousePressed = function() {
 	m = true;
+	md = true;
 };
 mouseReleased = function() {
 	m = false;
