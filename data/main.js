@@ -87,7 +87,7 @@ setup = function() {
 		}
 		stroke(prim);
 		strokeWeight(buh/10);
-		rect(bux,buy,buw,buh,buh/3);
+		rect(bux,buy,buw,buh,buh/2.5);
 		
 		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2) {
 			fill(sec);
