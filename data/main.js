@@ -15,7 +15,7 @@ frameRate(60);
 setup = function() {
 	mainfont = createFont("Times New Roman");
 	logo = loadImage("data/images/logo1.png");
-	isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+	ismobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 	
 	keys = [];
 	pages = [];
@@ -94,12 +94,15 @@ setup = function() {
 		} else {
 			fill(prim);
 		}
-		textFont(mainfont,buh/3);
+		textFont(mainfont,buh/2);
+		if (ismobile) {
+			textSize(buh/3);
+		}
 		textAlign(CENTER,CENTER);
 		text(butext,bux,buy);
 		
 		
-		if (isMobile && (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2)) {		  
+		if (ismobile && (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2)) {		  
 			con.pressed = true;
 			return con.pressed;
 		}
@@ -117,18 +120,30 @@ setup = function() {
 	standardbuttons = function() {
 		button(buttons.next);
 		if (buttons.next.pressed) {
-			if (flevel < 50) {
+			if (ismobile) {
+				if (flevel < 0) {
+					page += 1;
+					flevel = 255;
+				}
+			} else if (flevel < 60) {
 				page += 1;
 				flevel = 255;
 			}
 		};
 		
 		button(buttons.prev);
-		if (buttons.prev.pressed) {
-			if (flevel < 50) {
+		if (buttons.prev.pressed) {			
+			if (ismobile) {
+				if (flevel < 0) {
+					page -= 1;
+					flevel = 255;
+				}
+			} else if (flevel < 60) {
 				page -= 1;
 				flevel = 255;
 			}
+				
+				
 		};
 	};
 	
