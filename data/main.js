@@ -144,18 +144,15 @@ keyReleased = function() {
 };
 mousePressed = function() {
 	m = true;
-	md = true;
 };
 mouseReleased = function() {
 	m = false;
-	md = true;
 };
 
 draw = function() {
-	md = false;
 	pages[page]();
 	fill(0,0,0);
-	text(md,width/2,height/2);
+	text(mouseX+", "+mouseY,width/2,height/2);
 };
 
 }};
