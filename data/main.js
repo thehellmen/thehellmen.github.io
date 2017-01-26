@@ -139,7 +139,7 @@ setup = function() {
 draw = function() {
 	pages[page]();
 	fill(0,0,0);
-	text(m+" "+mousePressed,width/2,height/2);
+	text("width: "+width+" height: "+height,width/2,height/2);
 };
 
 keyPressed = function() {
