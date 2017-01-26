@@ -140,7 +140,7 @@ draw = function() {
 	md = false;
 	pages[page]();
 	fill(0,0,0);
-	text(m,width/2,height/2);
+	text(md,width/2,height/2);
 };
 
 keyPressed = function() {
