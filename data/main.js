@@ -20,6 +20,7 @@ setup = function() {
 	keys = [];
 	page = 0;
 	chapter1 = [];
+	chapter2 = [];
 	
 	m = false;
 	md = false;
@@ -133,9 +134,9 @@ setup = function() {
 	};
 	
 	// Loads an array with full pages
-	loadpages = function(chapter,target,prevlength) {
+	loadpages = function(cha,targ,prevlength) {
 		for (i = 0; i < chapter.length; i ++) {
-			target[i+prevlength]=displaypage(chapter,i);
+			targ[i+prevlength]=displaypage(cha,i);
 		};
 	};
 	
