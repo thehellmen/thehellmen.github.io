@@ -14,7 +14,7 @@ frameRate(60);
 
 setup = function() {
 	mainfont = createFont("Times New Roman");
-	logo = loadImage("images/logo1.png");
+	logo = loadImage("data/images/logo1.png");
 	
 	keys = [];
 	page = 0;
@@ -34,7 +34,7 @@ setup = function() {
 	};
 	
 	buttons = {
-		start:{x:width*(3/4),y:height/2,w:bw,h:bh,text:"Start"},
+		start:{x:width*(3/4),y:height/2,w:bw,h:bh,text:"Enter"},
 		next:{x:width*(3/4),y:height*(4/5),w:bw,h:bh,text:"Next"},
 	};
 	
