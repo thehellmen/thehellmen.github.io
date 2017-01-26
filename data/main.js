@@ -85,13 +85,7 @@ setup = function() {
 		rectMode(CENTER);
 		
 		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2) {
-			if (ismobile) {
-				if (mouseover = false) {
-					mouseover = true;
-				}
-			} else {
-				mouseover = true;
-			}
+			mouseover = true;
 		}
 		
 		if (mouseover) {
@@ -119,7 +113,6 @@ setup = function() {
 			if (con.pressed == false) {
 				con.pressed = true;
 				return con.pressed;
-				mouseover = false;
 			}
 		}
 		
