@@ -103,9 +103,13 @@ setup = function() {
 		
 		
 		if (ismobile && (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2)) {		  
-			con.pressed = true;
-			return con.pressed;
-			con.pressed = false;
+			if (con.pressed == false) {
+				con.pressed = true;
+				return con.pressed;
+				con.pressed = false;
+				mouseX = 0;
+				mouseY = 0;
+			}
 		}
 		
 		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && m) {
