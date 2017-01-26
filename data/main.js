@@ -154,6 +154,9 @@ mousePressed = function() {
 mouseDragged = function() {
 	md = true;
 };
+mouseClicked = function() {
+	md = true;
+};
 mouseReleased = function() {
 	m = false;
 	md = false;
