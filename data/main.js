@@ -94,7 +94,7 @@ setup = function() {
 		} else {
 			fill(prim);
 		}
-		textFont(mainfont,buh/2);
+		textFont(mainfont,buh/3);
 		textAlign(CENTER,CENTER);
 		text(butext,bux,buy);
 		
@@ -117,7 +117,7 @@ setup = function() {
 	standardbuttons = function() {
 		button(buttons.next);
 		if (buttons.next.pressed) {
-			if (flevel < 160) {
+			if (flevel < 100) {
 				page += 1;
 				flevel = 255;
 			}
@@ -125,7 +125,7 @@ setup = function() {
 		
 		button(buttons.prev);
 		if (buttons.prev.pressed) {
-			if (flevel < 160) {
+			if (flevel < 100) {
 				page -= 1;
 				flevel = 255;
 			}
