@@ -134,7 +134,7 @@ setup = function() {
 	
 	// Loads an array with full pages
 	loadpages = function(chapter,target,prevlength) {
-		for (i = page; i < chapter.length; i ++) {
+		for (i = 0; i < chapter.length; i ++) {
 			target[i+prevlength]=displaypage(chapter,i);
 		};
 	};
