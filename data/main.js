@@ -2,31 +2,40 @@
 
 var sketchProc=function(processingInstance){ with (processingInstance){
 
-var mainfont = createFont("monospace");
-test = loadImage("data/images/logo1.png");
+//Setup
+var wi = window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+var he = window.innerHeight ||
+         document.documentElement.clientHeight ||
+         document.body.clientHeight;
+size(wi*0.9,he*0.9);
+frameRate(60);
 
 setup = function() {
-	//Setup
-	var wi = window.innerWidth ||
-                document.documentElement.clientWidth ||
-                document.body.clientWidth;
-    	var he = window.innerHeight ||
-                 document.documentElement.clientHeight ||
-                 document.body.clientHeight;
-	size(wi*0.9,he*0.9);
-	frameRate(60);
-	
+	mainfont = createFont("Times New Roman");
+	logo = loadImage("data/images/logo1.png");
 	
 	keys = [];
+	page = 0;
+	chapter1 = [];
 	
+	m = false;
 	bw = width/8;
 	bh = width/16;
 	prim = color(15,15,15);
 	sec = color(100,30,30);
 	tert = color(150,150,150);
 	
+	loadpanels = function(name,number,target) {
+		for (i = 0; i < number; i ++) {
+			target[i] = loadImage("data/images/panels"+name+i+".png");
+		}
+	};
+	
 	buttons = {
 		start:{x:width*(3/4),y:height/2,w:bw,h:bh,text:"Start"},
+		next:{x:width*(3/4),y:height*(4/5),w:bw,h:bh,text:"Next"},
 	};
 	
 	displaypanel = function(img,x,y) {
@@ -39,44 +48,66 @@ setup = function() {
 	};
 	
 	button = function(con) {
-		x = con.x
-		y = con.y
-		w = con.w
-		h = con.h
-		text = con.text
+		bux = con.x
+		buy = con.y
+		buw = con.w
+		buh = con.h
+		butext = con.text
+		con.pressed = false;
 		
-		fill(sec);
-		stroke(prim);
-		strokeWeight(3);
-		rect(x,y,w,h,15);
-		
-		fill(0,0,0);
-		textFont(mainfont,10);
-		textAlign(CENTER,CENTER);
-		text(text,x,y);
-		
-		
-		if (mouseX>x&&mouseX<x+w && mouseY>y&&mouseY<y+h) {
-			
+		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh) {
+			fill(prim);
+		} else {
+			fill(sec);			
 		}
+		stroke(prim);
+		strokeWeight(buh/10);
+		rect(bux,buy,buw,buh,buh/3);
+		
+		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh) {
+			fill(sec);
+		} else {
+			fill(prim);
+		}
+		textFont(mainfont,buh/2);
+		textAlign(CENTER,CENTER);
+		text(butext,bux+buw/2,buy+buh/2);
+		
+		
+		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && m) {
+			con.pressed = true;
+		}
+		return con.pressed;
 	};
+	
+	loadpanels("chap1",0,chapter1);
+	
+	pages = [
+		function() {
+			background(55,55,55)
+
+			displaypanel(logo,width/4,height/2)
+
+			button(buttons.start)
+			if (buttons.start.pressed==true) {
+				page += 1
+			}			
+		},
+		function() {
+			background(55,55,55)
+			
+			button(buttons.next)
+			if (buttons.next.pressed) {
+				page += 1
+			}
+		},
+		
+	];
 	
 };
 
-setup();
-
 draw = function() {
-mouseIsPressed = false;
-	background(55,55,55);
-
-	displaypanel(test,width/4,height/2);
-	
-	button(buttons.start);	
-	
-	fill(255,0,0);
-	textFont(mainfont,30);
-	textAlign(CENTER,CENTER);
-	text("test",0,0);
+	pages[page]();
 };
 
 keyPressed = function() {
@@ -86,10 +117,10 @@ keyReleased = function() {
 	keys[keyCode] = false;
 };
 mousePressed = function() {
-	mouseIsPressed = true;
+	m = true;
 };
 mouseReleased = function() {
-	mouseIsPressed = false;
+	m = false;
 };
 
 }};
