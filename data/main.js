@@ -119,7 +119,7 @@ setup = function() {
 		return con.pressed;
 	};
 	
-	loadpanels("chap1/",3,chapter1);
+	loadpanels("chap1/",4,chapter1);
 	
 	// Standard button layout
 	standardbuttons = function() {
@@ -187,6 +187,9 @@ setup = function() {
 		},
 		function() {
 			displaypage(chapter1,2);
+		},
+		function() {
+			displaypage(chapter1,3);
 		},
 	];
 	
