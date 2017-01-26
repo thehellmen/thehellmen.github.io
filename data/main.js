@@ -22,11 +22,18 @@ setup = function() {
 	
 	m = false;
 	md = false;
+	flevel = 255;
 	bw = width/8;
 	bh = width/16;
 	prim = color(15,15,15);
 	sec = color(100,30,30);
 	tert = color(150,150,150);
+	backg = color(55,55,55);
+	
+	fade = function() {
+		flevel -= 10;
+		fill(55,55,55,flevel);
+	};
 	
 	loadpanels = function(name,number,target) {
 		for (i = 0; i < number;) {
@@ -90,17 +97,19 @@ setup = function() {
 		button(buttons.next);
 		if (buttons.next.pressed) {
 			page += 1;
+			flevel = 255;
 		};
 		
 		button(buttons.prev);
 		if (buttons.prev.pressed) {
 			page -= 1;
+			flevel = 255;
 		};
 	};
 	
 	pages = [
 		function() {
-			background(55,55,55)
+			background(backg)
 
 			displaypanel(logo,width/4,height/2)
 
@@ -110,7 +119,7 @@ setup = function() {
 			}			
 		},
 		function() {
-			background(55,55,55)
+			background(backg)
 			
 			displaypanel(chapter1[0],width/2,height/2);
 			
