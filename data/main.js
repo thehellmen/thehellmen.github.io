@@ -116,7 +116,7 @@ setup = function() {
 			button(buttons.start)
 			if (buttons.start.pressed==true) {
 				page += 1
-			}			
+			}
 		},
 		function() {
 			background(backg)
@@ -124,6 +124,8 @@ setup = function() {
 			displaypanel(chapter1[0],width/2,height/2);
 			
 			standardbuttons();
+			
+			fade();
 		},
 		
 	];
