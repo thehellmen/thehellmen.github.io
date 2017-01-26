@@ -60,7 +60,7 @@ setup = function() {
 		
 		rectMode(CENTER);
 		
-		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh) {
+		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2) {
 			fill(prim);
 		} else {
 			fill(sec);			
@@ -69,7 +69,7 @@ setup = function() {
 		strokeWeight(buh/10);
 		rect(bux,buy,buw,buh,buh/3);
 		
-		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh) {
+		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2) {
 			fill(sec);
 		} else {
 			fill(prim);
