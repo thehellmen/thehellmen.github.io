@@ -37,7 +37,8 @@ setup = function() {
 	
 	buttons = {
 		start:{x:width*(3/4),y:height/2,w:bw,h:bh,text:"Enter"},
-		next:{x:width*(3/4),y:height*(4/5),w:bw,h:bh,text:"Next"},
+		next:{x:width*(4/5),y:height*(5/6),w:bw,h:bh,text:"Next"},
+		prev:{x:width*(1/5),y:height*(5/6),w:bw,h:bh,text:"Previous"},
 	};
 	
 	displaypanel = function(img,x,y) {
@@ -83,6 +84,17 @@ setup = function() {
 	};
 	
 	loadpanels("chap1/",1,chapter1);
+	standardbuttons = function() {
+		button(buttons.next);
+		if (buttons.next.pressed) {
+			page += 1;
+		};
+		
+		button(buttons.prev);
+		if (buttons.prev.pressed) {
+			page -= 1;
+		};
+	};
 	
 	pages = [
 		function() {
@@ -100,10 +112,7 @@ setup = function() {
 			
 			displaypanel(chapter1[0],width/2,height/2);
 			
-			button(buttons.next)
-			if (buttons.next.pressed) {
-				page += 1
-			}
+			standardbuttons();
 		},
 		
 	];
