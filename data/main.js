@@ -37,8 +37,8 @@ setup = function() {
 	
 	buttons = {
 		start:{x:width*(3/4),y:height/2,w:bw,h:bh,text:"Enter"},
-		next:{x:width*(5/7),y:height*(5/6),w:bw,h:bh,text:"Next"},
-		prev:{x:width*(1/7),y:height*(5/6),w:bw,h:bh,text:"Previous"},
+		next:{x:width,y:height*(1/2),w:bw,h:bh,text:"Next"},
+		prev:{x:width,y:height*(1/2),w:bw,h:bh,text:"Previous"},
 	};
 	
 	displaypanel = function(img,x,y) {
@@ -58,6 +58,8 @@ setup = function() {
 		butext = con.text
 		con.pressed = false;
 		
+		rectMode(CENTER);
+		
 		if (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh) {
 			fill(prim);
 		} else {
@@ -74,10 +76,10 @@ setup = function() {
 		}
 		textFont(mainfont,buh/2);
 		textAlign(CENTER,CENTER);
-		text(butext,bux+buw/2,buy+buh/2);
+		text(butext,bux,buy);
 		
 		
-		if ((mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && m) || (mouseX>bux&&mouseX<bux+buw && mouseY>buy&&mouseY<buy+buh && md)) {
+		if ((mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && m) || (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && md)) {
 			con.pressed = true;
 		}
 		return con.pressed;
