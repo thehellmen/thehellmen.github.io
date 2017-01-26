@@ -77,10 +77,15 @@ setup = function() {
 		buh = con.h
 		butext = con.text
 		con.pressed = false;
+		mouseover = false;
 		
 		rectMode(CENTER);
 		
 		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2) {
+			mouseover = true;
+		}
+		
+		if (mouseover) {
 			fill(prim);
 		} else {
 			fill(sec);			
@@ -89,7 +94,7 @@ setup = function() {
 		strokeWeight(buh/10);
 		rect(bux,buy,buw,buh,buh/2.5);
 		
-		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2) {
+		if (mouseover) {
 			fill(sec);
 		} else {
 			fill(prim);
@@ -102,17 +107,15 @@ setup = function() {
 		text(butext,bux,buy);
 		
 		
-		if (ismobile && (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2)) {		  
+		if (ismobile && mouseover) {		  
 			if (con.pressed == false) {
 				con.pressed = true;
 				return con.pressed;
-				con.pressed = false;
-				mouseX = 0;
-				mouseY = 0;
+				mouseover = false;
 			}
 		}
 		
-		if (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && m) {
+		if (mouseover && m) {
 			con.pressed = true;
 			return con.pressed;
 		}
