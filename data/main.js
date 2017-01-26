@@ -81,7 +81,7 @@ setup = function() {
 		return con.pressed;
 	};
 	
-	loadpanels("chap1",0,chapter1);
+	loadpanels("/chap1/",1,chapter1);
 	
 	pages = [
 		function() {
@@ -96,6 +96,8 @@ setup = function() {
 		},
 		function() {
 			background(55,55,55)
+			
+			displaypanel(chapter1[0],width/2,height/2);
 			
 			button(buttons.next)
 			if (buttons.next.pressed) {
