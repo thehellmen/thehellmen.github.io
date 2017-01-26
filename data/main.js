@@ -18,6 +18,7 @@ setup = function() {
 	isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 	
 	keys = [];
+	pages = [];
 	page = 0;
 	chapter1 = [];
 	chapter2 = [];
