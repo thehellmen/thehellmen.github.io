@@ -88,7 +88,8 @@ setup = function() {
 		textAlign(CENTER,CENTER);
 		text(butext,bux,buy);
 		
-		if ("/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i".test(navigator.userAgent)) && (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2)) {
+		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		if (isMobile && (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2)) {		  
 			con.pressed = true;
 			return con.pressed;
 		}
