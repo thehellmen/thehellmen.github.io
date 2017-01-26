@@ -66,7 +66,7 @@ setup = function() {
 		buw = con.w
 		buh = con.h
 		butext = con.text
-		con.pressed = false;
+		//con.pressed = false;
 		
 		rectMode(CENTER);
 		
