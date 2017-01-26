@@ -1,21 +1,4 @@
-var sketchProc=function(processingInstance){ with (processingInstance){
-
-
-
-setup = function() {
-	//Setup
-	var w = window.innerWidth ||
-                document.documentElement.clientWidth ||
-                document.body.clientWidth;
-    	var h = window.innerHeight ||
-                 document.documentElement.clientHeight ||
-                 document.body.clientHeight;
-	size(w*0.9,h*0.9);
-	frameRate(60);
-	
-	
-	test = loadImage("data/images/Bootleg2.png");
-	/*@pjs preload="data/images/logo1.png";*/
+/*@pjs preload="data/images/logo1.png";*/
 
 var sketchProc=function(processingInstance){ with (processingInstance){
 
@@ -88,8 +71,7 @@ mouseIsPressed = false;
 
 	displaypanel(test,width/4,height/2);
 	
-	button(buttons.start);
-	
+	button(buttons.start);	
 	
 	fill(255,0,0);
 	textFont(mainfont,30);
@@ -108,27 +90,6 @@ mousePressed = function() {
 };
 mouseReleased = function() {
 	mouseIsPressed = false;
-};
-
-}};
-	displaypanel = function(img,x,y) {
-		imageMode(CENTER);
-		pushMatrix();
-	
-			translate(x,y);
-			scale(0.001*height);
-			image(img,0,0);
-	
-		popMatrix();
-	};
-	
-};
-
-setup();
-
-draw = function() {
-	background(55,55,55);	
-	displaypanel(test,width/2,height/2);		
 };
 
 }};
