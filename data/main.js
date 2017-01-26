@@ -21,6 +21,7 @@ setup = function() {
 	chapter1 = [];
 	
 	m = false;
+	md = false;
 	bw = width/8;
 	bh = width/16;
 	prim = color(15,15,15);
@@ -121,8 +122,13 @@ keyReleased = function() {
 mousePressed = function() {
 	m = true;
 };
+mouseDragged = function() {
+	md = true;
+};
 mouseReleased = function() {
 	m = false;
+	md = false;
 };
+
 
 }};
