@@ -21,7 +21,9 @@ setup = function() {
 	pages = [];
 	page = 0;
 	chapter1 = [];
+	chapter1pages = [];
 	chapter2 = [];
+	chapter2pages = [];
 	
 	m = false;
 	md = false;
@@ -109,39 +111,42 @@ setup = function() {
 		return con.pressed;
 	};
 	
-	loadpanels("chap1/",1,chapter1);
+	loadpanels("chap1/",3,chapter1);
 	
 	// Standard button layout
 	standardbuttons = function() {
 		button(buttons.next);
 		if (buttons.next.pressed) {
-			page += 1;
-			flevel = 255;
+			if (flevel < 180) {
+				page += 1;
+				flevel = 255;
+			}
 		};
 		
 		button(buttons.prev);
 		if (buttons.prev.pressed) {
-			page -= 1;
-			flevel = 255;
+			if (flevel < 180) {
+				page -= 1;
+				flevel = 255;
+			}
 		};
 	};
 	
 	// Creates a full page
-	displaypage = function(chapter,number) {
+	displaypage = function(chap,number) {
 		background(backg);		
-		displaypanel(chapter[number],width/2,height/2);			
-		standardbuttons();			
+		displaypanel(chap[number],width/2,height/2);			
+		standardbuttons();
 		fade();
-	};
-	
+	}
 	// Loads an array with full pages
-	loadpages = function(cha,targ,prevlength) {
-		for (i = 0; i < chapter.length; i ++) {
-			targ[i+prevlength]=displaypage(cha,i);
+	loadpages = function(cha,targ) {
+		for (i = 0; i < cha.length; i ++) {
+			targ.push(displaypage(cha,i));
 		};
-	};
+	}
 	
-	loadpages(chapter1,pages,1);
+	loadpages(chapter1,pages);
 	
 	pages = [
 		function() {
@@ -153,6 +158,15 @@ setup = function() {
 			if (buttons.start.pressed==true) {
 				page += 1
 			}
+		},
+		function() {
+			displaypage(chapter1,0);
+		},
+		function() {
+			displaypage(chapter1,1);
+		},
+		function() {
+			displaypage(chapter1,2);
 		},
 	];
 	
