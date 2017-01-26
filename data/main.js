@@ -89,7 +89,7 @@ setup = function() {
 		text(butext,bux,buy);
 		
 		
-		if ((mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && m) || (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && md)) {
+		if ((mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && m) || (mouseX>bux-buw/2&&mouseX<bux+buw/2 && mouseY>buy-buh/2&&mouseY<buy+buh/2 && mousePressed == true)) {
 			con.pressed = true;
 			return con.pressed;
 		}
@@ -139,7 +139,7 @@ setup = function() {
 draw = function() {
 	pages[page]();
 	fill(0,0,0);
-	text(m+" "+md+" "+buttons.start.pressed,width/2,height/2);
+	text(m+" "+mousePressed,width/2,height/2);
 };
 
 keyPressed = function() {
