@@ -14,7 +14,7 @@ frameRate(60);
 
 setup = function() {
 	mainfont = createFont("Times New Roman");
-	logo = loadImage("data/images/logo1.png");
+	logo = loadImage("images/logo1.png");
 	
 	keys = [];
 	page = 0;
