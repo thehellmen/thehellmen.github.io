@@ -136,13 +136,6 @@ setup = function() {
 	
 };
 
-draw = function() {
-	md = false;
-	pages[page]();
-	fill(0,0,0);
-	text(md,width/2,height/2);
-};
-
 keyPressed = function() {
 	keys[keyCode] = true;
 };
@@ -158,5 +151,11 @@ mouseReleased = function() {
 	md = true;
 };
 
+draw = function() {
+	md = false;
+	pages[page]();
+	fill(0,0,0);
+	text(md,width/2,height/2);
+};
 
 }};
