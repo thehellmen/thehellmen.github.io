@@ -151,7 +151,7 @@ setup = function() {
 		pushMatrix();
 		translate(x,y);
 		scale(0.001*height,0.001*height);
-			image(chap[number],0,0);
+			image(img,0,0);
 		popMatrix();
 	};
 	
