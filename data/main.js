@@ -167,6 +167,12 @@ setup = function() {
 		for (i = 0; i < cha.length; i ++) {
 			targ.push(function() {fcha= cha; fi= i; displaypage(fcha,fi)});
 		};
+		targ[cha.length] = function() {
+			background(backg);
+			textSize(height/5);
+			fill(sec);
+			text("Under Construction",width/2,height/2);
+		};
 	};
 	
 	loadpanels("chap1/",chapter1length,chapter1);
