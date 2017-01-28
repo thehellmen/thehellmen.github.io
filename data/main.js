@@ -151,21 +151,26 @@ setup = function() {
 		pushMatrix();
 		translate(x,y);
 		scale(0.001*height,0.001*height);
-			image(img,0,0);
+			image(chap[number],0,0);
 		popMatrix();
 	};
 	
 	// Creates a full page
 	displaypage = function(chap,number) {
 		background(backg);		
-		displaypanel(chap[number],width/2,height/2);			
+		imageMode(CENTER);
+		pushMatrix();
+		translate(width/2,height/2);
+		scale(0.001*height,0.001*height);
+			image(chap[number],0,0);
+		popMatrix();
 		standardbuttons();
 		fade();
 	};
 	// Loads an array with full pages
 	loadpages = function(cha,targ) {
 		for (i = 0; i < cha.length; i ++) {
-			targ.push(function() {fcha = cha; fi = i;displaypage(cha,i)});
+			targ.push(function() {fcha = cha; fi = i;displaypage(fcha,fi)});
 		};
 	};
 	
