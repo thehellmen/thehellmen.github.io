@@ -23,7 +23,8 @@ setup = function() {
 	
 	chapter1 = [];
 	chapter1pages = [];
-	chapter1length = "/images/panels/chap1".length;
+	chapter1length = 7;
+	//Make this 1 more than total number of images.
 	
 	chapter2 = [];
 	chapter2pages = [];
@@ -124,7 +125,7 @@ setup = function() {
 					page += 1;
 					flevel = 255;
 				}
-			} else if (flevel < 80) {
+			} else if (flevel < 180) {
 				page += 1;
 				flevel = 255;
 			}
@@ -137,7 +138,7 @@ setup = function() {
 					page -= 1;
 					flevel = 255;
 				}
-			} else if (flevel < 80) {
+			} else if (flevel < 180) {
 				page -= 1;
 				flevel = 255;
 			}
