@@ -191,6 +191,7 @@ setup = function() {
 	
 draw = function() {
 	pages[page]();
+	println(pages);
 };
 
 keyPressed = function() {
