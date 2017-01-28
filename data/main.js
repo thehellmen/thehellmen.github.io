@@ -158,12 +158,7 @@ setup = function() {
 	// Creates a full page
 	displaypage = function(chap,number) {
 		background(backg);		
-		imageMode(CENTER);
-		pushMatrix();
-		translate(width/2,height/2);
-		scale(0.001*height,0.001*height);
-			image(chap[number],0,0);
-		popMatrix();
+		displaypanel(chap[number],width/2,height/2
 		standardbuttons();
 		fade();
 	};
