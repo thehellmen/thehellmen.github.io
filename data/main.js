@@ -62,48 +62,6 @@ setup = function() {
 		prev:{x:width*(1/9),y:height*(1/2),w:bw,h:bh,text:"Previous"},
 	};
 	
-	// Displays an image properly.
-	displaypanel = function(img,x,y) {
-		imageMode(CENTER);
-		pushMatrix();
-		translate(x,y);
-		scale(0.001*height,0.001*height);
-			image(img,0,0);
-		popMatrix();
-	};
-	
-	// Creates a full page
-	displaypage = function(chap,number) {
-		background(backg);		
-		displaypanel(chap[number],width/2,height/2);			
-		standardbuttons();
-		fade();
-	};
-	// Loads an array with full pages
-	loadpages = function(cha,targ) {
-		for (i = 0; i < cha.length; i ++) {
-			targ.push(function() {fcha = cha; fi = i;displaypage(cha,i)});
-		};
-	};
-	
-	
-	loadpanels("chap1/",chapter1length,chapter1);
-	
-	pages = [
-		function() {
-			background(backg)
-
-			displaypanel(logo,width/4,height/2)
-
-			button(buttons.start)
-			if (buttons.start.pressed==true) {
-				page += 1
-			}
-		},
-		
-	];
-	loadpages(chapter1,pages);
-	
 	// The hefty button function.  Works on all platforms tested.  Needs an exterior click call.
 	button = function(con) {
 		bux = con.x
@@ -187,6 +145,47 @@ setup = function() {
 	
 	
 	
+	// Displays an image properly.
+	displaypanel = function(img,x,y) {
+		imageMode(CENTER);
+		pushMatrix();
+		translate(x,y);
+		scale(0.001*height,0.001*height);
+			image(img,0,0);
+		popMatrix();
+	};
+	
+	// Creates a full page
+	displaypage = function(chap,number) {
+		background(backg);		
+		displaypanel(chap[number],width/2,height/2);			
+		standardbuttons();
+		fade();
+	};
+	// Loads an array with full pages
+	loadpages = function(cha,targ) {
+		for (i = 0; i < cha.length; i ++) {
+			targ.push(function() {fcha = cha; fi = i;displaypage(cha,i)});
+		};
+	};
+	
+	loadpanels("chap1/",chapter1length,chapter1);
+	
+	pages = [
+		function() {
+			background(backg)
+
+			displaypanel(logo,width/4,height/2)
+
+			button(buttons.start)
+			if (buttons.start.pressed==true) {
+				page += 1
+			}
+		},
+		
+		
+	];
+	loadpages(chapter1,pages);	
 };
 	
 draw = function() {
