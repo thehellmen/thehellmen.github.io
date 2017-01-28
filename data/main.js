@@ -164,11 +164,9 @@ setup = function() {
 	// Loads an array with full pages
 	loadpages = function(cha,targ) {
 		for (i = 0; i < cha.length; i ++) {
-			targ.push(displaypage(cha,i));
+			targ.push({function() {displaypage(chapter1,i);},});
 		};
 	}
-	
-	loadpages(chapter1,pages);
 	
 	pages = [
 		function() {
@@ -181,22 +179,9 @@ setup = function() {
 				page += 1
 			}
 		},
-		function() {
-			displaypage(chapter1,0);
-		},
-		function() {
-			displaypage(chapter1,1);
-		},
-		function() {
-			displaypage(chapter1,2);
-		},
-		function() {
-			displaypage(chapter1,3);
-		},
-		function() {
-			displaypage(chapter1,4);
-		},
+		
 	];
+	loadpages(chapter1,pages);
 	
 };
 	
