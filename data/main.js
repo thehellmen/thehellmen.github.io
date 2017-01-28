@@ -23,7 +23,7 @@ setup = function() {
 	
 	chapter1 = [];
 	chapter1pages = [];
-	chapter1length = 5;
+	chapter1length = 6;
 	
 	chapter2 = [];
 	chapter2pages = [];
