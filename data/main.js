@@ -54,6 +54,7 @@ setup = function() {
 			i ++;
 		}
 	};
+	loadpanels("chap1/",chapter1length,chapter1);
 	
 	// The array of data for buttons used.
 	buttons = {
@@ -175,7 +176,7 @@ setup = function() {
 		};
 	};
 	
-	loadpanels("chap1/",chapter1length,chapter1);
+	
 	
 	pages = [
 		function() {
