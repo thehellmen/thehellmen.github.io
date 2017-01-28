@@ -117,7 +117,7 @@ setup = function() {
 	standardbuttons = function() {
 		textSize(bh/2);
 		fill(prim);
-		text("Page "+page,buttons.next.x,buttons.next.y*2/3);
+		text("Page "+page,buttons.next.x,buttons.next.y/2);
 		button(buttons.next);
 		if (buttons.next.pressed) {
 			if (ismobile) {
@@ -177,6 +177,7 @@ setup = function() {
 			textSize(height/5);
 			fill(sec);
 			text("Under Construction",width/2,height/2);
+			button(width/2,buttons.prev.y,buttons.prev.w,buttons.prev.h,buttons.prev.text);
 		};
 	};
 	
