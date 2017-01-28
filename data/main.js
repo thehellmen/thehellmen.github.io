@@ -197,7 +197,7 @@ setup = function() {
 draw = function() {
 	pages[page]();
 	textSize(17);
-	text(pages[2],width/2,height/2);
+	text(page,width/2,height/2);
 };
 
 keyPressed = function() {
