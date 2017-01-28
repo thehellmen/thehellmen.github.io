@@ -114,6 +114,9 @@ setup = function() {
 	
 	// Standard button layout
 	standardbuttons = function() {
+		textSize(bh/2);
+		fill(prim);
+		text("Page "+page,buttons.next.x,buttons.next.y*2/3);
 		button(buttons.next);
 		if (buttons.next.pressed) {
 			if (ismobile) {
