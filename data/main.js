@@ -62,6 +62,7 @@ setup = function() {
 		start:{x:width*(3/4),y:height/2,w:bw,h:bh,text:"Enter"},
 		next:{x:width*(8/9),y:height*(1/2),w:bw,h:bh,text:"Next"},
 		prev:{x:width*(1/9),y:height*(1/2),w:bw,h:bh,text:"Previous"},
+		construction:{x:width/2,y:height*3/4,w:bw,h:bh,text:"Back"},
 	};
 	
 	// The hefty button function.  Works on all platforms tested.  Needs an exterior click call.
@@ -177,8 +178,8 @@ setup = function() {
 			textSize(height/5);
 			fill(sec);
 			text("Under Construction",width/2,height/2);
-			button({x:width/2,y:height*3/4,w:bw,h:bh,text:"Back"});
-			if (button({x:width/2,y:height*3/4,w:bw,h:bh,text:"Back"}).pressed) {
+			button(buttons.construction);
+			if (buttons.construction.pressed) {
 				page -= 1;
 			}
 		};
