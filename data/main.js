@@ -120,7 +120,7 @@ setup = function() {
 					page += 1;
 					flevel = 255;
 				}
-			} else if (flevel < 60) {
+			} else if (flevel < 80) {
 				page += 1;
 				flevel = 255;
 			}
@@ -133,7 +133,7 @@ setup = function() {
 					page -= 1;
 					flevel = 255;
 				}
-			} else if (flevel < 60) {
+			} else if (flevel < 80) {
 				page -= 1;
 				flevel = 255;
 			}
