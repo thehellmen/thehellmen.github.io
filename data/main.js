@@ -158,14 +158,14 @@ setup = function() {
 	// Creates a full page
 	displaypage = function(chap,number) {
 		background(backg);		
-		displaypanel(chap[number],width/2,height/2
+		displaypanel(chap[number],width/2,height/2);
 		standardbuttons();
 		fade();
 	};
 	// Loads an array with full pages
 	loadpages = function(cha,targ) {
 		for (i = 0; i < cha.length; i ++) {
-			targ.push(function() {fcha = cha; fi = i;displaypage(fcha,fi)});
+			targ.push(function() {fcha= cha, fi= i,displaypage(fcha,fi)});
 		};
 	};
 	
