@@ -166,7 +166,7 @@ setup = function() {
 	// Loads an array with full pages
 	loadpages = function(cha,targ) {
 		for (i = 0; i < cha.length; i ++) {
-			targ.push(function() {displaypage("chap1/",page-1)});
+			targ.push(function() {displaypage("chap1/",i)});
 		};
 		targ[cha.length] = function() {
 			background(backg);
