@@ -72,6 +72,38 @@ setup = function() {
 		popMatrix();
 	};
 	
+	// Creates a full page
+	displaypage = function(chap,number) {
+		background(backg);		
+		displaypanel(chap[number],width/2,height/2);			
+		standardbuttons();
+		fade();
+	};
+	// Loads an array with full pages
+	loadpages = function(cha,targ) {
+		for (i = 0; i < cha.length; i ++) {
+			targ.push({function() {displaypage(cha,i);},});
+		};
+	};
+	
+	
+	loadpanels("chap1/",chapter1length,chapter1);
+	
+	pages = [
+		function() {
+			background(backg)
+
+			displaypanel(logo,width/4,height/2)
+
+			button(buttons.start)
+			if (buttons.start.pressed==true) {
+				page += 1
+			}
+		},
+		
+	];
+	loadpages(chapter1,pages);
+	
 	// The hefty button function.  Works on all platforms tested.  Needs an exterior click call.
 	button = function(con) {
 		bux = con.x
@@ -121,8 +153,6 @@ setup = function() {
 		return con.pressed;
 	};
 	
-	loadpanels("chap1/",chapter1length,chapter1);
-	
 	// Standard button layout
 	standardbuttons = function() {
 		button(buttons.next);
@@ -154,34 +184,8 @@ setup = function() {
 		};
 	};
 	
-	// Creates a full page
-	displaypage = function(chap,number) {
-		background(backg);		
-		displaypanel(chap[number],width/2,height/2);			
-		standardbuttons();
-		fade();
-	}
-	// Loads an array with full pages
-	loadpages = function(cha,targ) {
-		for (i = 0; i < cha.length; i ++) {
-			targ.push({function() {displaypage(chapter1,i);},});
-		};
-	}
 	
-	pages = [
-		function() {
-			background(backg)
-
-			displaypanel(logo,width/4,height/2)
-
-			button(buttons.start)
-			if (buttons.start.pressed==true) {
-				page += 1
-			}
-		},
-		
-	];
-	loadpages(chapter1,pages);
+	
 	
 };
 	
