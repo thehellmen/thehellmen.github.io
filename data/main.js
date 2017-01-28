@@ -23,7 +23,7 @@ setup = function() {
 	
 	chapter1 = [];
 	chapter1pages = [];
-	chapter1length = 6;
+	chapter1length = /images/panels/chap1.length;
 	
 	chapter2 = [];
 	chapter2pages = [];
