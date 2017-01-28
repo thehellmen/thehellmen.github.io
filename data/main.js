@@ -196,7 +196,7 @@ setup = function() {
 	
 draw = function() {
 	pages[page]();
-	textSize(7);
+	textSize(12);
 	text(pages,width/2,height/2);
 };
 
