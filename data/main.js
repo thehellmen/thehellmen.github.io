@@ -177,7 +177,10 @@ setup = function() {
 			textSize(height/5);
 			fill(sec);
 			text("Under Construction",width/2,height/2);
-			button(width/2,buttons.prev.y,buttons.prev.w,buttons.prev.h,buttons.prev.text);
+			button(width/2,height*3/4,buttons.prev.w,buttons.prev.h,buttons.prev.text);
+			if (button(width/2,buttons.prev.y,buttons.prev.w,buttons.prev.h,buttons.prev.text).pressed) {
+				page -= 1;
+			}
 		};
 	};
 	
