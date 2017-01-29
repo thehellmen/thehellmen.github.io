@@ -35,9 +35,9 @@ setup = function() {
 	bw = width/6;
 	bh = width/12;
 	prim = color(15,15,15);
-	sec = color(100,30,30);
+	sec = color(130,60,60);
 	tert = color(150,150,150);
-	backg = color(55,55,55);
+	backg = color(75,75,75);
 	
 	// Standard fade in.
 	fade = function() {
