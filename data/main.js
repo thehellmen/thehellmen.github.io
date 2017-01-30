@@ -176,7 +176,7 @@ setup = function() {
 		targ[cha.length] = function() {
 			background(backg);
 			textSize(height/5);
-			fill(sec);
+			fill(prim);
 			text("Under Construction",width/2,height/2);
 			button(buttons.construction);
 			if (buttons.construction.pressed) {
