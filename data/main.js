@@ -115,10 +115,10 @@ setup = function() {
 	};
 	
 	// Standard button layout
-	standardbuttons = function() {
+	standardbuttons = function(p) {
 		textSize(bh/2);
 		fill(prim);
-		text("Page "+page+"/"+pages.length-2,buttons.next.x,buttons.next.y/2);
+		text("Page "+page+"/"+p-2,buttons.next.x,buttons.next.y/2);
 		button(buttons.next);
 		if (buttons.next.pressed) {
 			if (ismobile) {
@@ -147,10 +147,7 @@ setup = function() {
 				
 		};
 	};
-	
-	
-	
-	
+
 	// Displays an image properly.
 	displaypanel = function(img,x,y) {
 		imageMode(CENTER);
@@ -165,7 +162,7 @@ setup = function() {
 	displaypage = function(chap,number) {
 		background(backg);		
 		displaypanel(chap[number],width/2,height/2);
-		standardbuttons();
+		standardbuttons(pages.length);
 		fade();
 	};
 	// Loads an array with full pages
@@ -201,7 +198,7 @@ setup = function() {
 		
 		
 	];
-	loadpages(chapter1,pages);	
+	loadpages(chapter1,pages);
 };
 	
 draw = function() {
