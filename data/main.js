@@ -115,10 +115,10 @@ setup = function() {
 	};
 	
 	// Standard button layout
-	standardbuttons = function(p) {
+	standardbuttons = function() {
 		textSize(bh/2);
 		fill(prim);
-		text("Page "+page+"/"+p-2,buttons.next.x,buttons.next.y/2);
+		text("Page "+page+"/"+chap1length-1,buttons.next.x,buttons.next.y/2);
 		button(buttons.next);
 		if (buttons.next.pressed) {
 			if (ismobile) {
@@ -162,7 +162,7 @@ setup = function() {
 	displaypage = function(chap,number) {
 		background(backg);		
 		displaypanel(chap[number],width/2,height/2);
-		standardbuttons(pages.length);
+		standardbuttons();
 		fade();
 	};
 	// Loads an array with full pages
