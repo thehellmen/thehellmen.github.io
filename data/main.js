@@ -23,7 +23,7 @@ setup = function() {
 	
 	chapter1 = [];
 	chapter1pages = [];
-	chapter1length = 7;
+	chapter1length = 8;
 	//Make this 1 more than total number of images.
 	
 	chapter2 = [];
