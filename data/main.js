@@ -208,7 +208,7 @@ setup = function() {
 		pushMatrix();
 		translate(width/2,height/2);
 		scale(0.001*height,0.001*height);
-			tint(140,140,140,flevel*2);
+			tint(55,55,55,flevel*2);
 			image(smoke,0,0);
 			noTint();
 		popMatrix();		
