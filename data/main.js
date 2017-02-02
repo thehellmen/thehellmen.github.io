@@ -15,6 +15,7 @@ frameRate(60);
 setup = function() {
 	mainfont = createFont("Times New Roman");
 	logo = loadImage("data/images/logo1.png");
+	smoke = loadImage("data/images/panels/chap1/smoke.png");
 	ismobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 	
 	keys = [];
@@ -23,7 +24,7 @@ setup = function() {
 	
 	chapter1 = [];
 	chapter1pages = [];
-	chapter1length = 8;
+	chapter1length = 9;
 	//Make this 1 more than total number of images.
 	
 	chapter2 = [];
@@ -198,7 +199,20 @@ setup = function() {
 		
 		
 	];
+	// Load all the standard pages automatically
 	loadpages(chapter1,pages);
+	
+	// Now, change specific ones to do different things.
+	pages[8] = function() {
+		displaypage(chapter1,7);
+		pushMatrix();
+		translate(width/2,height/2);
+		scale(0.001*height,0.001*height);
+			tint(0,0,0,flevel*10);
+			image(smoke,0,0);
+			noTint();
+		popMatrix();		
+	};
 };
 	
 draw = function() {
