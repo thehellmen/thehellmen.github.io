@@ -203,7 +203,8 @@ setup = function() {
 	loadpages(chapter1,pages);
 	
 	// Now, change specific ones to do different things.
-	pages[8] = function() {
+	// Optimization issues...
+	/*pages[8] = function() {
 		displaypage(chapter1,7);
 		pushMatrix();
 		translate(width/2,height/2);
@@ -212,7 +213,7 @@ setup = function() {
 			image(smoke,0,0);
 			noTint();
 		popMatrix();		
-	};
+	};*/
 };
 	
 draw = function() {
